@@ -1,6 +1,6 @@
 # Smart Lost & Found Platform - Backend API
 
-AI-Powered Django REST Framework Backend with Pretrained CLIP Vision Transformers, MySQL 8.4, Simple JWT Authentication, and Haversine Proximity Search.
+AI-Powered Django REST Framework Backend with Pretrained CLIP Vision Transformers, PostgreSQL, Simple JWT Authentication, and Haversine Proximity Search.
 
 ## Features
 - **JWT Authentication & RBAC:** General User, Item Finder, and Administrator roles.
@@ -15,14 +15,14 @@ AI-Powered Django REST Framework Backend with Pretrained CLIP Vision Transformer
 - Django 6.1.1
 - Django REST Framework 3.18.1
 - Simple JWT 5.5.1
-- MySQL 8.4 Server
+- PostgreSQL
 - PyTorch 2.15.0 & Hugging Face Transformers 5.22.2
 - drf-spectacular 0.30.0 (Swagger/OpenAPI 3.0)
 
 ## Quick Start Guide
 
 ### 1. Configure Environment
-Copy `.env.example` to `.env` and set your MySQL credentials:
+Copy `.env.example` to `.env` and set your PostgreSQL credentials:
 ```powershell
 cp .env.example .env
 ```
@@ -33,13 +33,16 @@ DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 
 DB_NAME=smart_loss_database
-DB_USER=root
-DB_PASSWORD=2008
+DB_USER=postgres
+DB_PASSWORD=your-postgres-password
 DB_HOST=localhost
-DB_PORT=3306
+DB_PORT=5432
+DB_SSLMODE=prefer
 
 CORS_ALLOWED_ORIGINS=http://localhost:5173,http://localhost:3000
 ```
+
+For a Render database accessed from outside Render, set `DB_HOST` to the external hostname shown in the Render dashboard and `DB_SSLMODE=require`.
 
 ### 2. Install Dependencies
 ```powershell

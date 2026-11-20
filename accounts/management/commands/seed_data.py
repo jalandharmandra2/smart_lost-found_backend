@@ -214,4 +214,4 @@ class Command(BaseCommand):
         find_and_record_matches_for_lost_item(lost1)
         find_and_record_matches_for_lost_item(lost2)
 
-        self.stdout.write(self.style.SUCCESS("AI similarity matching completed and persisted to MySQL."))
+        self.stdout.write(self.style.SUCCESS("AI similarity matching completed and persisted to PostgreSQL."))
